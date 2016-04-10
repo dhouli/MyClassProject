@@ -64,6 +64,25 @@ public class GoodNight extends AppCompatActivity {
         Log.i(TAG, "onCreate");
 
 
+        //create our database for the tasks
+        TasksDBHelper tasksDBHelper = new TasksDBHelper(getApplicationContext());
+        //Set DB repository in write mode
+        SQLiteDatabase db = tasksDBHelper.getWritableDatabase();
+        toast("SQLiteDatabase created tasks");
+
+
+        //for now hard code the information to our database
+        ContentValues tasks = new ContentValues();
+        tasks.put(TasksDBHelper.FIELD_REWARD, "brush teeth");
+        tasks.put(TasksDBHelper.FIELD_REWARD_1, "pajamas");
+        tasks.put(TasksDBHelper.FIELD_REWARD_2, "story time");
+        toast("values created!");
+
+        db.insert(TasksDBHelper.TABLE_NAME,null,tasks);
+
+
+
+
     }
 
 
