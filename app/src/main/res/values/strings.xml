@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MyClassProject</string>
+    <string name="button_one">PushMe</string>
+    <string name="night_button">Good Night</string>
+    <string name="brush_teeth">Brush Teeth</string>
+    <string name="pajamas">PJ\'s</string>
+    <string name="story_time">Story</string>
+    <string name="Activity_title">What I completed tonight</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="my_button">push</string>
+    <string name="title_activity_my_bed_time">MyBedTime</string>
+    <string name="Set_Time">Set Time</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+
+</resources>
