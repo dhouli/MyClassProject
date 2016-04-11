@@ -9,31 +9,29 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+//This class allows the user to dynamically add the three tasks that need to be completed prior to bedtime
+//Precondition: The reward has been set by the user
+//PostCondition: The tasks will be set by the user, written into the DB, and read into the checklist.
 public class setTasks extends AppCompatActivity {
 
-    //toast("Helper Created");
-    //adding this method from the notes to easily use toast
-    private void toast(String aToast){
-        Toast.makeText(getApplicationContext(), aToast, Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_tasks);
 
-
-
-
-
     }
+
+
+
+    //This method will be responsible for creating and writing the tasks to the database
     public void showNext(View v){
 
         //create our database for the tasks
         TasksDBHelper tasksDBHelper = new TasksDBHelper(getApplicationContext());
         //Set DB repository in write mode
         SQLiteDatabase db = tasksDBHelper.getWritableDatabase();
-        toast("SQLiteDatabase created tasks");
+
 
 
         //capture the text that is entered for tasks 1 to 3.
@@ -56,7 +54,6 @@ public class setTasks extends AppCompatActivity {
         tasks.put(TasksDBHelper.FIELD_REWARD, myTask1);
         tasks.put(TasksDBHelper.FIELD_REWARD_1, myTask2);
         tasks.put(TasksDBHelper.FIELD_REWARD_2, myTask3);
-        toast("values created!");
         db.insert(TasksDBHelper.TABLE_NAME, null, tasks);
 
         //use intent to move us to next screen
