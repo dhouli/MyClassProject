@@ -66,21 +66,47 @@ public class GoodNight extends AppCompatActivity {
 
         //create our database for the tasks
         TasksDBHelper tasksDBHelper = new TasksDBHelper(getApplicationContext());
-        //Set DB repository in write mode
-        SQLiteDatabase db = tasksDBHelper.getWritableDatabase();
-        toast("SQLiteDatabase created tasks");
 
 
-        //for now hard code the information to our database
-        ContentValues tasks = new ContentValues();
-        tasks.put(TasksDBHelper.FIELD_REWARD, "brush teeth");
-        tasks.put(TasksDBHelper.FIELD_REWARD_1, "pajamas");
-        tasks.put(TasksDBHelper.FIELD_REWARD_2, "story time");
-        toast("values created!");
+        //Reading from the DB to get tge activities, then going to write it to the fields
+        //TasksDBHelper tasksDBHelper = new TasksDBHelper(getApplicationContext());
+        // dBase is access for reading
+        SQLiteDatabase dBase = tasksDBHelper.getReadableDatabase();
+        toast("SQLiteDatabase accessed");
 
-        db.insert(TasksDBHelper.TABLE_NAME,null,tasks);
+        //use array projection to grab the column in the DB
+        String[] projection = {"task","task1","task2"};
 
+        // Query c performed with projection
+        Cursor c = dBase.query(
+                TasksDBHelper.TABLE_NAME,     // table to query
+                projection,                         // columns to return
+                null,                               // columns for WHERE clause
+                null,                               // values for WHERE clause
+                null,                               // don't group rows
+                null,                               // don't filter by row groups
+                null                                // sort order
+        );
 
+        c.moveToFirst();
+
+        //Using this information to display in the textView to present to the user
+        String myReward = c.getString(c.getColumnIndexOrThrow(TasksDBHelper.FIELD_REWARD));
+        String myReward1 = c.getString(c.getColumnIndexOrThrow(TasksDBHelper.FIELD_REWARD_1));
+        String myReward2 = c.getString(c.getColumnIndexOrThrow(TasksDBHelper.FIELD_REWARD_2));
+        toast(myReward + myReward1 + myReward2);
+
+        //write to the field
+        //Displaying the reward using textView
+        TextView myview;
+        myview=(TextView)findViewById(R.id.field1);
+        myview.setText(myReward);
+
+        myview=(TextView)findViewById(R.id.field2);
+        myview.setText(myReward1);
+
+        myview=(TextView)findViewById(R.id.field3);
+        myview.setText(myReward2);
 
 
     }
@@ -94,6 +120,10 @@ public class GoodNight extends AppCompatActivity {
     public void selectItem(View v){
         //Boolean to confirm it is checked
         boolean selected =((CheckBox) v).isChecked();
+
+
+
+
 
         //Need to find which checkbox is selected
         //use switch to find this

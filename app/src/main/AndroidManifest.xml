@@ -27,7 +27,8 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_splash_screen"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".RewardDBReader"></activity>
+        <activity android:name=".RewardDBReader" />
+        <activity android:name=".setTasks"></activity>
     </application>
 
 </manifest>

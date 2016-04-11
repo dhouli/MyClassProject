@@ -43,7 +43,7 @@ public class Reward extends AppCompatActivity {
 
 
 
-        //capture the next that is entered
+        //capture the text that is entered
         EditText theReward   = (EditText)findViewById(R.id.reward);
 
         //need to convert editText to a string
@@ -61,7 +61,7 @@ public class Reward extends AppCompatActivity {
 
 
         // Take us to GoodNight class after the button is clicked
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, setTasks.class);
         startActivity(intent);
 
 

@@ -22,7 +22,6 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/brush_teeth"
         android:id="@+id/brush_teeth"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -36,7 +35,6 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pajamas"
         android:id="@+id/pajamas"
         android:layout_below="@+id/brush_teeth"
         android:layout_alignLeft="@+id/brush_teeth"
@@ -47,13 +45,12 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/story_time"
         android:id="@+id/story_time"
+        android:checked="false"
+        android:onClick="selectItem"
         android:layout_below="@+id/pajamas"
         android:layout_alignLeft="@+id/pajamas"
-        android:layout_alignStart="@+id/pajamas"
-        android:checked="false"
-        android:onClick="selectItem"/>
+        android:layout_alignStart="@+id/pajamas" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,7 +71,32 @@
         android:layout_alignLeft="@+id/brush_teeth"
         android:layout_alignStart="@+id/brush_teeth" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="field1"
+        android:id="@+id/field1"
+        android:layout_alignTop="@+id/brush_teeth"
+        android:layout_toRightOf="@+id/final_result"
+        android:layout_toEndOf="@+id/final_result" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="field2"
+        android:id="@+id/field2"
+        android:layout_alignTop="@+id/pajamas"
+        android:layout_alignLeft="@+id/field3"
+        android:layout_alignStart="@+id/field3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="field3"
+        android:id="@+id/field3"
+        android:layout_below="@+id/pajamas"
+        android:layout_alignLeft="@+id/field1"
+        android:layout_alignStart="@+id/field1" />
 
 
 </RelativeLayout>
