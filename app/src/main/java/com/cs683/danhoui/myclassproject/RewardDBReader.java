@@ -1,8 +1,13 @@
 package com.cs683.danhoui.myclassproject;
 
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +32,12 @@ public class RewardDBReader extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reward_dbreader);
 
+        //set timer in milli to display the splash screen = 3 seconds
+        int splashTimer = 10000;
+
+
+
+
         //Create our database object to read stars from GoodNight
         GoodNightDBHelper goodNightDBHelper = new GoodNightDBHelper(getApplicationContext());
 
@@ -50,6 +61,41 @@ public class RewardDBReader extends AppCompatActivity {
             String myStarsAnswer = Double.toString(answer);
             //Setting the view
             starView.setText("You currently have " + myStarsAnswer + " stars so far. And you need 30 stars to get the reward.");
+
+
+            if(answer<30){
+                //create handler to start next activity
+                Handler myHandler = new Handler();
+                //using postDelayed to allow it to be run using the 3 seconds timer
+                myHandler.postDelayed(new Runnable() {
+                    public void run() {
+                        //We run to start next activity
+                        //send us to the Main Activity class
+                        Intent myIntent = new Intent(RewardDBReader.this, RewardWon.class);
+                        //move us to the MainActivity class
+                        RewardDBReader.this.startActivity(myIntent);
+                        RewardDBReader.this.finish();
+                    }
+                }, splashTimer);//our timer variable is here
+
+            }else{
+                //create handler to start next activity
+                Handler myHandler = new Handler();
+                //using postDelayed to allow it to be run using the 3 seconds timer
+                myHandler.postDelayed(new Runnable() {
+                    public void run() {
+                        //We run to start next activity
+                        //send us to the Main Activity class
+                        Intent myIntent = new Intent(RewardDBReader.this, RewardWon.class);
+                        //move us to the MainActivity class
+                        RewardDBReader.this.startActivity(myIntent);
+                        RewardDBReader.this.finish();
+                    }
+                }, splashTimer);//our timer variable is here
+
+            }
+
+
         }
 
 
