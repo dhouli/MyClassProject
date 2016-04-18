@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by danhoui on 4/10/16.
  * The class is used to create a table for dynamic storage of the tasks list
+ * It is responsible for storing the tasks that the user gathers from completing the nightly activity.
+ * precondition:the DB needs to not yet be created
+ * postcondition: the DB will be created and the first entry will be stored.
  */
 public class TasksDBHelper extends SQLiteOpenHelper{
     //define our DB

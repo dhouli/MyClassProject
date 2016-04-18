@@ -11,7 +11,8 @@ import android.widget.Toast;
 
 
 //The purpose of this class is to add a reward for the child to receive after they get the 30 stars
-//****This class is still needs work
+//pre-condition: The reward needs to be entered
+//Post Condition: The reward is stored in the DB
 
 
 public class Reward extends AppCompatActivity {

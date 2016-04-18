@@ -158,11 +158,6 @@ public class GoodNight extends AppCompatActivity {
         }
 
 
-
-        //Need to add code to check array to confirm all three have been checked
-        //this may be in the form of a database
-
-
     }
     //precondition is that the check boxes must already be selected using the SelectItem method
     // This finalSelection method totals the amount and displays it
@@ -244,9 +239,6 @@ public class GoodNight extends AppCompatActivity {
         //Keep in mind the idea to write this to DB
 
 
-
-
-
         //DB read information
         // dBase is access for reading
         SQLiteDatabase dBase = goodNightDBHelper.getReadableDatabase();
@@ -293,13 +285,6 @@ public class GoodNight extends AppCompatActivity {
 
 
     }
-
-
-
-
-
-
-
 
 
 

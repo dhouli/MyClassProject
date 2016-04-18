@@ -5,8 +5,10 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+//This class will act as a splash screen to display celebration balloons that the user has reached the required 30 stars
 //image used from google, orginal source myugavetschoolexperience.wordpress.com
-
+//Precondition: The user has gained 30 stars
+//Postcondition: The user will be brought to the reward class
 
 public class Balloons extends AppCompatActivity {
 

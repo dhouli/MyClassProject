@@ -13,8 +13,10 @@ import android.widget.TextView;
 
 public class RewardWon extends AppCompatActivity {
 
-    ConnectivityManager connManager;
-    NetworkInfo netInfo;
+
+    //Set our variables for connectivityManager and Networkinfo which will be used further in the program to test our network connectivity status
+    ConnectivityManager ConnectManager;
+    NetworkInfo myInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,10 +71,11 @@ public class RewardWon extends AppCompatActivity {
         myview.setText("Your reward is a " + myReward);
 
 
-
-        connManager =(ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
-        netInfo = connManager.getActiveNetworkInfo();
-        boolean isConnected = netInfo != null && netInfo.isConnectedOrConnecting();
+        //confirm the user has network access to prepare for future release
+        ConnectManager =(ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+        myInfo = ConnectManager.getActiveNetworkInfo();
+        boolean isConnected = myInfo != null && myInfo.isConnectedOrConnecting();
+        //use text view to display the connectivity information to the user
         TextView connectView;
         connectView=(TextView)findViewById(R.id.connectivity);
         connectView.setText("Are we connected to network: " + isConnected);

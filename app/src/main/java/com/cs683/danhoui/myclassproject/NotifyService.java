@@ -19,6 +19,8 @@ import android.support.v4.app.NotificationManagerCompat;
 
 //The purpose of this service is to talk to the MainActivity class and display the notification using the notificationCompatBuilder
 //Referenced https://www.youtube.com/watch?v=tyVaPHv-RGo for assistance with tutorial on setting alarm manager and setting up a service.
+// Pre-Condition: The Service is called by the MainActivity
+// Post Condition: The alert is ready to display at the selected time
 
 //class is extending Service class
 public class NotifyService extends Service {

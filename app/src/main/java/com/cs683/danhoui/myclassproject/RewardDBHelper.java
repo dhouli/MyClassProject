@@ -7,7 +7,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by danhoui on 4/2/16.
  * This will be used to store the information of the users expected reward
- * The format is similar to that of the notes
+ * It is responsible for storing the reward that the user gathers from completing the nightly activity.
+ * precondition:the DB needs to not yet be created
+ * postcondition: the DB will be created and the first entry will be stored.
  */
 public class RewardDBHelper extends SQLiteOpenHelper {
 

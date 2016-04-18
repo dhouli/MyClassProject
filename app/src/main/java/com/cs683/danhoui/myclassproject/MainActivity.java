@@ -16,6 +16,10 @@ import java.util.Date;
 
 
 //The purpose of this class is to display a timer that can be set for the bedtime alarm
+// Pre-Condition: The reward has already been set and written to the DB
+// Post Condition: The alarm will be set and will ring at the correct time
+
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

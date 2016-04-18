@@ -6,6 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by danhoui on 3/31/16.
+ * This is a helper that will setup the creation of the GoodNight DB
+ * It is responsible for storing the stars that the user gathers from completing the nightly activity.
+ * precondition:the DB needs to not yet be created
+ * postcondition: the DB will be created and the first entry will be stored.
  */
 public class GoodNightDBHelper extends SQLiteOpenHelper{
 

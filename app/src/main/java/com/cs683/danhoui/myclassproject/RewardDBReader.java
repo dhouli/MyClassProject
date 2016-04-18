@@ -71,7 +71,7 @@ public class RewardDBReader extends AppCompatActivity {
                     public void run() {
                         //We run to start next activity
                         //send us to the Main Activity class
-                        Intent myIntent = new Intent(RewardDBReader.this, Balloons.class);
+                        Intent myIntent = new Intent(RewardDBReader.this, MainActivity.class);
                         //move us to the MainActivity class
                         RewardDBReader.this.startActivity(myIntent);
                         RewardDBReader.this.finish();
