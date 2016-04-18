@@ -11,6 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+//The purpose of this class will be to display to the user a summary of the reward they have selected
+//and to congradulate them on gaining the 30 stars
+//In addition it tests network connectivity which will hopefully be used in a future implementation to store the information to the cloud
+// Pre-condition: The user must have achieved the 30 stars
+//Post Condition: The stars will be reset and the user will be returned to the reward screen
 public class RewardWon extends AppCompatActivity {
 
 
@@ -33,7 +38,7 @@ public class RewardWon extends AppCompatActivity {
             public void run() {
                 //We run to start next activity
                 //send us to the Main Activity class
-                Intent myIntent = new Intent(RewardWon.this, MainActivity.class);
+                Intent myIntent = new Intent(RewardWon.this, Reward.class);
                 //move us to the MainActivity class
                 RewardWon.this.startActivity(myIntent);
                 RewardWon.this.finish();
@@ -61,7 +66,7 @@ public class RewardWon extends AppCompatActivity {
                 null                                // sort order
         );
         // firstGrade is grade1 in first record
-        c.moveToFirst();
+        c.moveToLast();
 
         String myReward = c.getString(c.getColumnIndexOrThrow(RewardDBHelper.FIELD_REWARD));
 

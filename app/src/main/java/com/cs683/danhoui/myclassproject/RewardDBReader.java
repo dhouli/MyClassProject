@@ -71,7 +71,7 @@ public class RewardDBReader extends AppCompatActivity {
                     public void run() {
                         //We run to start next activity
                         //send us to the Main Activity class
-                        Intent myIntent = new Intent(RewardDBReader.this, MainActivity.class);
+                        Intent myIntent = new Intent(RewardDBReader.this, RewardWon.class);
                         //move us to the MainActivity class
                         RewardDBReader.this.startActivity(myIntent);
                         RewardDBReader.this.finish();
@@ -118,8 +118,8 @@ public class RewardDBReader extends AppCompatActivity {
                 null,                               // don't filter by row groups
                 null                                // sort order
         );
-        // firstGrade is grade1 in first record
-        c.moveToFirst();
+        // select first record to be displayed
+        c.moveToLast();
 
         String myReward = c.getString(c.getColumnIndexOrThrow(RewardDBHelper.FIELD_REWARD));
 

@@ -88,7 +88,7 @@ public class GoodNight extends AppCompatActivity {
                 null                                // sort order
         );
 
-        c.moveToFirst();
+        c.moveToLast();
 
         //Using this information to display in the textView to present to the user
         String myReward = c.getString(c.getColumnIndexOrThrow(TasksDBHelper.FIELD_REWARD));
@@ -265,16 +265,16 @@ public class GoodNight extends AppCompatActivity {
             double answer = myCursor.getDouble(c.getColumnIndexOrThrow(GoodNightDBHelper.FIELD_STARS));
             toast("the answer: " + answer);
         }
-        ///Testing===================
+
         toast("Query made");
 
-        // firstGrade is grade1 in first record
+
         c.moveToFirst();
         //c.moveToNext();
         int firstGrade = c.getInt(c.getColumnIndexOrThrow(GoodNightDBHelper.FIELD_STARS));
         //int second = c.getInt(c.getColumnIndexOrThrow(GoodNightDBHelper.FIELD_STARS));
         toast("First star = " + firstGrade);
-        //toast("Second star = " + second);
+
 
         dBase.close();
 
