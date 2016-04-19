@@ -12,10 +12,10 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 //The purpose of this class will be to display to the user a summary of the reward they have selected
-//and to congradulate them on gaining the 30 stars
+//and to congratulate them on gaining the 30 stars
 //In addition it tests network connectivity which will hopefully be used in a future implementation to store the information to the cloud
 // Pre-condition: The user must have achieved the 30 stars
-//Post Condition: The stars will be reset and the user will be returned to the reward screen
+//Post Condition: The stars will be reset(by deleting the DB) and the user will be returned to the reward screen
 public class RewardWon extends AppCompatActivity {
 
 
@@ -85,7 +85,15 @@ public class RewardWon extends AppCompatActivity {
         connectView=(TextView)findViewById(R.id.connectivity);
         connectView.setText("Are we connected to network: " + isConnected);
 
+        //create our database
+        GoodNightDBHelper goodNightDBHelper = new GoodNightDBHelper(getApplicationContext());
+
+        //Set DB repository in write mode
+        //Source http://stackoverflow.com/questions/26764887/how-to-drop-android-sqlite-database-programmatically
+        SQLiteDatabase db = goodNightDBHelper.getWritableDatabase();
+        db.delete("GoodNight",null,null);
 
 
     }
+
 }
