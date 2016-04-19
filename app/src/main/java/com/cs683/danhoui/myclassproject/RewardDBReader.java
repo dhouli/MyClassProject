@@ -66,12 +66,12 @@ public class RewardDBReader extends AppCompatActivity {
             if(answer<30){
                 //create handler to start next activity
                 Handler myHandler = new Handler();
-                //using postDelayed to allow it to be run using the 3 seconds timer
+                //using posponytDelayed to allow it to be run using the 3 seconds timer
                 myHandler.postDelayed(new Runnable() {
                     public void run() {
                         //We run to start next activity
                         //send us to the Main Activity class
-                        Intent myIntent = new Intent(RewardDBReader.this, GoodNight.class);
+                        Intent myIntent = new Intent(RewardDBReader.this, MainActivity.class);
                         //move us to the MainActivity class
                         RewardDBReader.this.startActivity(myIntent);
                         RewardDBReader.this.finish();
@@ -86,7 +86,7 @@ public class RewardDBReader extends AppCompatActivity {
                     public void run() {
                         //We run to start next activity
                         //send us to the Main Activity class
-                        Intent myIntent = new Intent(RewardDBReader.this, RewardWon.class);
+                        Intent myIntent = new Intent(RewardDBReader.this, Balloons.class);
                         //move us to the MainActivity class
                         RewardDBReader.this.startActivity(myIntent);
                         RewardDBReader.this.finish();
