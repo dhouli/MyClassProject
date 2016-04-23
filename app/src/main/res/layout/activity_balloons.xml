@@ -12,8 +12,17 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView3"
+        android:id="@+id/balloons"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/balloons"/>
+        android:src="@drawable/balloons" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/GetCrazy"
+        android:id="@+id/button3"
+        android:layout_alignBottom="@+id/balloons"
+        android:layout_centerHorizontal="true"
+        android:onClick="getCrazy"/>
 </RelativeLayout>

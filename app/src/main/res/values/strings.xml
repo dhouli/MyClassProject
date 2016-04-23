@@ -11,5 +11,6 @@
     <string name="title_activity_my_bed_time">MyBedTime</string>
     <string name="Set_Time">Set Time</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="GetCrazy">Get Crazy</string>
 
 </resources>
